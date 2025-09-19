@@ -1,5 +1,7 @@
 import random
 import string
+import requests
+from test_data import Urls
 
 
 def random_email():
@@ -24,3 +26,8 @@ def user_data():
         "name": random_name()
     }
     return data
+
+def delete_user(access_token):
+    response = requests.delete(f"{Urls.base_url}{Urls.api_delete_user}", headers={'authorization': access_token})
+    assert response.status_code == 202, 'не удалось удалить пользователя'
+

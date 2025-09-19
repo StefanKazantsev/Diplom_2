@@ -15,6 +15,7 @@ class Urls:
     api_get_all_order = "/api/orders/all"  # Получить все заказы
     api_get_order_user = "/api/orders"  # Получить заказы конкретного пользователя
 
+class ResponseBodies:
     wrong_data = {
         "email": "001@test.ru",
         "password": "020304"
@@ -31,3 +32,8 @@ class Urls:
     non_hash_ingredient = {
         "ingredients": ["non_id"]
     }
+class Texts:
+    NON_AUTORAZATION_ERROR_MESSAGE = "You should be authorised"
+    NON_INGRIDIENTS_ERROR_MESSAGE = "Ingredient ids must be provided"
+    USER_ALREADY_EXISTS_ERROR_MESSAGE = "User already exists"
+    MISSING_FIELD_ERROR_MESSAGE = "Email, password and name are required fields"
